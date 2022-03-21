@@ -11,10 +11,10 @@ header("X-Content-Type-Options: nosniff");
 # LOAD SLIM FRAMEWORK AND REQUIRED LIBRARIES
 require "application/library/Slim/Slim.php";
 require "application/router/Router.php";
-require "application/mvc/model/connect.php";
+require "application/mvc/model/build/connect.php";
 include('application/library/helper/helper.php');
-require 'application/mvc/controller/Controller.php';
-require 'application/mvc/controller/Pages.php';
+require 'application/mvc/controller/build/Controller.php';
+require 'application/mvc/controller/build/Config.php';
 
 
 # CREATE NEW SLIM APP
@@ -36,8 +36,8 @@ $router->get('/customer', 'Pages@customer')->name('customer');
 
 # RUN THE APP
 
-$app->render('header.inc.php', compact('app'));
+$app->render('build/header.inc.php', compact('app'));
 $app->run();
-$app->render('footer.inc.php', compact('app'));
+$app->render('build/footer.inc.php', compact('app'));
 
 ?>
