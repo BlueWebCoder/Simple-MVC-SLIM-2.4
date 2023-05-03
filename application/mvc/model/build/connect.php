@@ -2,10 +2,10 @@
 
 	class Db{
 		
-	  private $host   = 'localhost';
-	  private $dbName = 'test_stych';
-	  private $user   = 'root';
-	  private $pass   = ''; 
+	  private $host   = '_HOST';     //to fill ...
+	  private $dbName = '_DBNAME';
+	  private $user   = '_USER';
+	  private $pass   = '_PASS'; 
 	  private $dbh;
 	  private $error;
 	  private $stmt;
