@@ -2,16 +2,15 @@
 
 # MODEL: HOME
 
-class CustomerModel extends db{
+class CustomerModel extends db{      // Exemple page Customer 
 		
 	public function __construct(){
 		
 		 $this->db = new db;
 	}
 
-    public function getFirstName(){
-		
-		$resultats = $this->db->query("SELECT * FROM `customer` ORDER BY `id` DESC LIMIT 1");
+    public function getMyValueInDb(){
+		$resultats = $this->db->query("SELECT * FROM `xxxxxxx` WHERE xxxxx ORDER BY `xx` DESC LIMIT xx");
 		return $this->db->getResult();
     }
 }
