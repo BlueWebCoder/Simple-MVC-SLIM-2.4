@@ -2,7 +2,7 @@
 
 // Exemple for a customer
 $customer = new CustomerController;
-$customers = $customer->getMyValueInDb();
+$customers = $customer->getAllValues();
 
 ?>
 
