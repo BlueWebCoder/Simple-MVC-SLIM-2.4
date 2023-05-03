@@ -1,6 +1,6 @@
 <?php
 
-# MODEL: HOME
+# MODEL: CUSTOMER
 
 class CustomerModel extends db{      // Exemple page Customer 
 		
@@ -9,7 +9,7 @@ class CustomerModel extends db{      // Exemple page Customer
 		 $this->db = new db;
 	}
 
-    public function getMyValueInDb(){
+    public function getAllValues(){
 		$resultats = $this->db->query("SELECT * FROM `xxxxxxx` ORDER BY `xx` DESC LIMIT xx");
 		return $this->db->getResult();
     }
