@@ -1,6 +1,9 @@
 <?php
 
+// Exemple for a customer
 $customer = new CustomerController;
-$customers = $customer->getFirstName();
+$customers = $customer->getMyValueInDb();
 
-echo $customers['first_name'];
+?>
+
+<p> <?= $customers['my_value']; ?> </p>
