@@ -9,11 +9,6 @@
 		 $this->db = new db;
 		
 	}
-	
-	
-	public function renderInfos(){
-		echo 'toto';
-	 }
 															 
 }
 
