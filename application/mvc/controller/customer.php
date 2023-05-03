@@ -7,9 +7,9 @@ class CustomerController {
         $this->customerModel = new CustomerModel;  
    }
 
-   public function getFirstName(){
+   public function getAllValues(){
 
-    return $this->customerModel->getFirstName();
+    return $this->customerModel->getAllValues();
    }
 }
  
