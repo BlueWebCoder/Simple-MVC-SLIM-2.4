@@ -10,7 +10,7 @@ class CustomerModel extends db{      // Exemple page Customer
 	}
 
     public function getMyValueInDb(){
-		$resultats = $this->db->query("SELECT * FROM `xxxxxxx` WHERE xxxxx ORDER BY `xx` DESC LIMIT xx");
+		$resultats = $this->db->query("SELECT * FROM `xxxxxxx` ORDER BY `xx` DESC LIMIT xx");
 		return $this->db->getResult();
     }
 }
