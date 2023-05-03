@@ -29,7 +29,7 @@ $app->config(array(
 #ROUTES
 $router = new Router($app);
 $router->get('/', 'Pages@index')->name('homepage');
-$router->get('/customer', 'Pages@customer')->name('customer');
+$router->get('/customer', 'Pages@customer')->name('customer'); //Exemple new page
 
 
 
