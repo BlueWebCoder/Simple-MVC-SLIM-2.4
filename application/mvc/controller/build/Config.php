@@ -7,7 +7,7 @@ class Pages extends Controller {
     }
 
 	public function customer(){	
-		require 'application/mvc/model/customer.php';
-		require 'application/mvc/controller/customer.php';
+		require 'application/mvc/model/customer.php';       // New page exemple model
+		require 'application/mvc/controller/customer.php';  // New page exemple controller
     }
 } 
