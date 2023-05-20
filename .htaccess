@@ -1,5 +1,5 @@
 # Activation de PHP 5.6
-  SetEnv PHP_VER 7_3
+  SetEnv PHP_VER 5.6
   
 #Evite accès direct aux dossiers
 Options -Indexes
