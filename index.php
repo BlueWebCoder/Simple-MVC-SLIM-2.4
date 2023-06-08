@@ -1,43 +1,26 @@
 <?php
 
-// PHP errors reporting
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+require './vendor/autoload.php';
+require './app/src/Controllers/HomeAction.php';
 
+use Slim\Factory\AppFactory;
+use Slim\Psr7\Response;
+use Slim\Views\PhpRenderer;
 
-// Default headers
-header("X-Content-Type-Options: nosniff");
+$app = AppFactory::create();
 
-# LOAD SLIM FRAMEWORK AND REQUIRED LIBRARIES
-require "application/library/Slim/Slim.php";
-require "application/router/Router.php";
-require "application/mvc/model/build/connect.php";
-include('application/library/helper/helper.php');
-require 'application/mvc/controller/build/Controller.php';
-require 'application/mvc/controller/build/Config.php';
+$renderer = new PhpRenderer('./app/src/Templates');
 
+# ABOUT
 
-# CREATE NEW SLIM APP
-\Slim\Slim::registerAutoloader();
-$app = new \Slim\Slim([
-	'templates.path' => 'application/mvc/view'
-]);
-$app->config(array(
-    'debug' => true
-));
-
-#ROUTES
-$router = new Router($app);
-$router->get('/', 'Pages@index')->name('homepage');
-$router->get('/customer', 'Pages@customer')->name('customer'); //Exemple new page
-
-
-
+$app->get('/', app\src\Controllers\HomeAction::class);
 
 # RUN THE APP
-
-$app->render('build/header.inc.php', compact('app'));
 $app->run();
-$app->render('build/footer.inc.php', compact('app'));
 
-?>
+
+
+
+
+
+

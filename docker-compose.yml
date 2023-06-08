@@ -1,0 +1,51 @@
+version: '3'
+services:
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my_test_database
+      MYSQL_DATABASE: test_technique
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: monpassword
+    ports:
+      - 3306:3306
+
+  composer:
+    image: composer:latest
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+
+  php:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: php8
+    depends_on:
+      - db
+      - composer
+    image: php:8.0-apache
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 8090:80
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: your_database
+      DB_USER: your_user
+      DB_PASSWORD: your_password
+
+  phpmya:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db
+      PMA_USER: myuser
+      PMA_PASSWORD: monpassword
+      UPLOAD_LIMIT: 20M
+    ports:
+      - 8899:80

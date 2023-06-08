@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-4": {
+      "namespace1\\namespace2\\namespace3\\" : "app/src"
+    },
+    "classmap": ["app/src/"]
+  },
+
+  "require": {
+    "slim/slim": "^4.0",
+    "slim/psr7": "^1.4",
+    "slim/http": "^1.3",
+    "slim/php-view": "^3.0.0"
+  }
+}
